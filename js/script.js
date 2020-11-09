@@ -696,30 +696,31 @@
    let products=[
 	   {name:"Product A",
 		desc:"Desc A",
-		 features:"Feature 2"  },
+		 features:["Feature 1", "Feature 2"]  },
 		 
 		 {name:"Product B",
 		desc:"Desc B",
-		 features:"Feature B"},
+		 features:["Feature 3", "Feature 4"]},
 
 		 {name:"Product C",
 		desc:"Desc C",
-		 features:"Feature C"},
+		 features:["Feature 5", "Feature 6"]},
 
 		 {name:"Product D",
 		desc:"Desc D",
-		 features:"Feature D"},
+		 features:["Feature 7", "Feature 8"]},
 
 		 {name:"Product E",
 		desc:"Desc E",
-		 features:"Feature E"},
+		 features:["Feature 9", "Feature 10"]},
 		];
   const searchText=document.getElementById("search-text");
   const filteredProducts=[];
-//   const arrayIteration=(value)=>{
-	//   console.log(value);
-//   }
-// products[0].features.forEach(arrayIteration);
+  let productFeatures="";
+  const arrayIteration=(value)=>{
+	productFeatures+=value;
+	  console.log(productFeatures);
+  }
 
 
 
@@ -727,20 +728,28 @@ searchText.addEventListener('keyup',(e)=>{
 	const searchString=e.target.value.toLowerCase() ;
 	
 	const filteredProducts=products.filter(product=>{
-		let productFeatures=0;
-		if(product.features>=2){productFeatures =product.features.forEach(value);
-		console.log(productFeatures)}
-		return product.name.toLowerCase().includes(searchString) || product.desc.toLowerCase().includes(searchString) || product.features.toLowerCase().includes(searchString);
+		
+		
+	if (product.features[0]){ if(product.features[0].toLowerCase().includes(searchString))return product.features[0].toLowerCase().includes(searchString)}
+	if (product.features[1]){ if(product.features[1].toLowerCase().includes(searchString)) return product.features[1].toLowerCase().includes(searchString)}
+    if (product.features[2]){ if(product.features[2].toLowerCase().includes(searchString)) return product.features[2].toLowerCase().includes(searchString)}
+		return product.name.toLowerCase().includes(searchString) || product.desc.toLowerCase().includes(searchString) 
 	});
-	
 	displayResults(filteredProducts);
 });
 
   const displayResults=((products)=>{
  const htmlString=products.map((product,index)=>{
+	let productFeatures=[];
+	if (product.features[0]){productFeatures.push(product.features[0]);}
+	if (product.features[1]){productFeatures.push(product.features[1]);}
+	if (product.features[2]){productFeatures.push(product.features[2]);}
+	let featureArray="";
 	
-	
-	
+		featureArray=productFeatures.map(
+		   (val)=>{return `<li> ${val} </li>`}
+		   ).join("");
+   
 	return `<!--Service Type-->
 	<div class="service-type col-lg-3 col-md-3 col-sm-5 col-xs-12">
 		<div class="inner-box">
@@ -750,7 +759,7 @@ searchText.addEventListener('keyup',(e)=>{
 				<div class="desc-text">${product.desc}</div>
 				<ul class="list-style-one">
 					
-					<li>${product.features}</li>
+					${featureArray}
 					
 				</ul>
 			</div>
@@ -763,17 +772,14 @@ if(htmlString==''){
 productList.innerHTML=`<h3>No Search Results Found</h3>`;
 
 	productList.classList.remove('row');
-// console.log(productList.classList);
 }
 else{
 	productList.classList.add('row');
-	// console.log(productList.classList);
 
 }
   });
 
   
-//   console.log(productList.classList);
 
 /* ==========================================================================
    Suggested/Recent Search Results
@@ -786,14 +792,17 @@ const suggestedLI= document.querySelectorAll(".recent-searches-li");
 
 suggestedLI.forEach(item => {
 	item.addEventListener('click', event => {
-	//   console.log(item.innerHTML);
 	  searchText.value=item.innerHTML;
 	
 
 	  const searchString=item.innerHTML.toLowerCase() ;
 	
 	const filteredProducts=products.filter(product=>{
-		return product.name.toLowerCase().includes(searchString) || product.desc.toLowerCase().includes(searchString) || product.features.toLowerCase().includes(searchString);
+		if (product.features[0]){ if(product.features[0].toLowerCase().includes(searchString))return product.features[0].toLowerCase().includes(searchString)}
+		if (product.features[1]){ if(product.features[1].toLowerCase().includes(searchString)) return product.features[1].toLowerCase().includes(searchString)}
+		if (product.features[2]){ if(product.features[2].toLowerCase().includes(searchString)) return product.features[2].toLowerCase().includes(searchString)}
+			return product.name.toLowerCase().includes(searchString) || product.desc.toLowerCase().includes(searchString) 
+		
 	});
 	
 	displayResults(filteredProducts);
