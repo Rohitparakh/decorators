@@ -615,7 +615,30 @@
 				phone: {
 					required: true
 				},
-				subject: {
+				category: {
+					required: true
+				},
+				message: {
+					required: true
+				}
+			}
+		});
+	}
+	
+	//Index Contact Form Validation
+	if($('#contact-form-index').length){
+		$('#contact-form-index').validate({
+			rules: {
+				username: {
+					required: true
+				},
+				email: {
+					required: true,
+					email: true
+				},
+				phone: {
+					required: true
+				},category: {
 					required: true
 				},
 				message: {
@@ -625,7 +648,31 @@
 		});
 	}
 
+	//Send Us Message Form Validation
+	if($('#send-message').length){
+		$('#send-message').validate({
+			rules:{
+				name:{
+					required:true
+				},
+				email:{
+					required:true,
+                    email:true
+				},
+				message:{
+					required:true
 
+				},
+				// success: function(label) {
+					// var name = label.attr('for');
+					// label.text( ' is ok!');
+				// }
+			}
+		});
+		// $('#submit-btn').innerHTML="Form Submitted";
+	}
+
+	// document.querySelector('#submit-btn').addEventListener('click',(e)=>{e.preventDefault()})
 	// Scroll to a Specific Div
 	if($('.scroll-to-target').length){
 		$(".scroll-to-target").on('click', function() {
