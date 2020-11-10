@@ -653,26 +653,42 @@
 	<div class="popup-inner">
     
     	<div class="search-form">
-        	<form method="post" action="#">
+        	<!-- <form method="post" id="search-form" action="#"> -->
             	<div class="form-group">
                 	<fieldset>
-                        <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
-                        <input type="submit" value="Search" class="theme-btn">
+                        <input type="search" class="form-control" id="search-text" name="search-input" value="" placeholder="Search Here" required >
+                        <a href="#search-results"><input type="submit" value="Search" class="theme-btn" id="search-btn"></a>
                     </fieldset>
                 </div>
-            </form>
+            <!-- </form> -->
             
             <br>
-            <h3>Recent Search Keywords</h3>
-            <ul class="recent-searches">
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Web Development</a></li>
-                <li><a href="#">SEO</a></li>
-                <li><a href="#">Logistics</a></li>
-                <li><a href="#">Freedom</a></li>
+            <h3>Suggested Keywords</h3>
+            <ul id="recent-searches" class="recent-searches">
+                <li class="recent-searches-li">Product A</li>
+                <li class="recent-searches-li">Product B</li>
+                <li class="recent-searches-li">Product C</li>
+                <li class="recent-searches-li">Product D</li>
+                <li class="recent-searches-li">Product E</li>
             </ul>
-        
         </div>
+
+
+        <!-- <div class="search-results"> -->
+          <!--Service Types-->
+          <div class="service-types col-md-12 col-sm-12 col-xs-11 mx-auto">
+            <div id="search-results" class="row clearfix ">
+             
+
+                
+            </div>
+
+           
+
+    </div>
+
+
+       
         
     </div>
 </div>
