@@ -7615,3 +7615,11 @@ color:#777777;
 .checkout-section .payment-options .option-block .radio-block input[type="radio"]:checked+.radio-label:before{
 	background:#272727;
 }
+
+#contact-map::before {
+	content: '';
+	display: block;
+	height: 110px;
+	margin-top: -110px;
+	visibility: hidden;
+  }
