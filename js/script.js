@@ -604,6 +604,8 @@
 	//Contact Form Validation
 	if($('#contact-form').length){
 		$('#contact-form').validate({
+			onkeyup: false,
+			
 			rules: {
 				username: {
 					required: true
@@ -628,6 +630,8 @@
 	//Index Contact Form Validation
 	if($('#contact-form-index').length){
 		$('#contact-form-index').validate({
+			onkeyup: false,
+	
 			rules: {
 				username: {
 					required: true
@@ -651,6 +655,8 @@
 	//Send Us Message Form Validation
 	if($('#send-message').length){
 		$('#send-message').validate({
+			onkeyup: false,
+
 			rules:{
 				name:{
 					required:true
@@ -663,16 +669,39 @@
 					required:true
 
 				},
-				// success: function(label) {
-					// var name = label.attr('for');
-					// label.text( ' is ok!');
-				// }
+				
 			}
 		});
-		// $('#submit-btn').innerHTML="Form Submitted";
 	}
 
-	// document.querySelector('#submit-btn').addEventListener('click',(e)=>{e.preventDefault()})
+	//FAQ form validation	
+	if($('#faq-form').length){
+		$('#faq-form').validate({
+			onkeyup: false,
+rules:{
+	username:{
+		required:true
+	},
+	email:{
+		required:true,
+email:true
+	},
+	number:{
+		required:true,
+// phone:true
+	},
+	category:{
+		required:true
+
+	},
+	message:{
+		required:true
+
+	}
+}
+		});
+	}
+
 	// Scroll to a Specific Div
 	if($('.scroll-to-target').length){
 		$(".scroll-to-target").on('click', function() {
