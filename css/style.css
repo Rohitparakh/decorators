@@ -43,7 +43,7 @@
 42. Related Products
 43. Contact Us
 44. Map Section
-
+45. Random 
 
 **********************************************/
 
@@ -417,7 +417,7 @@ img{
 }
 
 .main-header .header-top .top-left ul li a:hover{
-	color:#fff;
+	color:var(--primary);
 }
 
 .main-header .header-top .top-right ul li a{
@@ -431,8 +431,13 @@ img{
 }
 
 .main-header .header-top .top-right ul li a,
-.main-header .header-top .top-right ul li a:hover{
+.main-header .header-top .top-right ul li{
 	color:#ffffff;	
+}
+.main-header .header-top .top-right ul li a:hover,
+.main-header .header-top .top-right ul li:hover{
+	color:var(--primary);
+	
 }
 
 .main-header .header-top .top-right ul li .fa{
@@ -3944,6 +3949,7 @@ color:#777777;
 	position:relative;
 	display:inline-block;
 	margin:0px 8px 10px 0px;	
+	width: 100%;
 }
 
 .main-footer .tags-widget .tags-list li a{
@@ -4126,6 +4132,7 @@ color:#777777;
 .main-footer .footer-nav li a:hover{
 	color:var(--primary);	
 }
+
 
 
 /*** 
@@ -7623,3 +7630,35 @@ color:#777777;
 	margin-top: -110px;
 	visibility: hidden;
   }
+
+  /*** 
+
+====================================================================
+	Global Settings
+====================================================================
+
+ ***/
+
+ /* Form Success Message */
+ form{
+	 overflow: hidden;
+ }
+
+ form h6{
+	 border: 1px solid green;
+	 margin-top: 20px;
+	 text-align: center;
+	 transform: translateX(-100%);
+	transition: all 1s ease;
+ }
+
+ input[type="submit"]:disabled,
+ button:disabled,
+ button:disabled:hover
+
+  {
+	  border: none;
+	background: #505050;
+  }
+
+ /*End Form Success Message */

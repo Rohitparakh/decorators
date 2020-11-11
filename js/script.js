@@ -605,7 +605,11 @@
 	if($('#contact-form').length){
 		$('#contact-form').validate({
 			onkeyup: false,
-			
+			submitHandler: function() {  
+				document.querySelector('#contact-form-success').style.transform="translateX(0%)";
+				document.querySelector('#contact-form-submit').innerHTML="Form Submitted";
+				document.querySelector('#contact-form-submit').disabled=true;
+			},
 			rules: {
 				username: {
 					required: true
@@ -631,7 +635,11 @@
 	if($('#contact-form-index').length){
 		$('#contact-form-index').validate({
 			onkeyup: false,
-	
+			submitHandler: function() {  
+				document.querySelector('#contact-form-index-success').style.transform="translateX(0%)";
+				document.querySelector('#contact-form-index-submit').innerHTML="Form Submitted";
+				document.querySelector('#contact-form-index-submit').disabled=true;
+},
 			rules: {
 				username: {
 					required: true
@@ -656,6 +664,11 @@
 	if($('#send-message').length){
 		$('#send-message').validate({
 			onkeyup: false,
+submitHandler: function() {  
+	document.querySelector('#send-message-success').style.transform="translateX(0%)";
+	document.querySelector('#send-message-submit').innerHTML="Form Submitted";
+				document.querySelector('#send-message-submit').disabled=true;
+},
 
 			rules:{
 				name:{
@@ -678,6 +691,11 @@
 	if($('#faq-form').length){
 		$('#faq-form').validate({
 			onkeyup: false,
+			submitHandler: function() {  
+				document.querySelector('#faq-form-success').style.transform="translateX(0%)";
+				document.querySelector('#faq-form-submit').innerHTML="Form Submitted";
+				document.querySelector('#faq-form-submit').disabled=true;
+			},
 rules:{
 	username:{
 		required:true
@@ -899,3 +917,23 @@ suggestedLI.forEach(item => {
         });
     });
 });
+
+
+document.querySelector('#send-message').addEventListener('submit',(e)=>{
+	e.preventDefault();
+});
+
+document.querySelector('#contact-form').addEventListener('submit',(e)=>{
+	e.preventDefault();
+});
+
+document.querySelector('#contact-form-index').addEventListener('submit',(e)=>{
+	e.preventDefault();
+
+});
+
+document.querySelector('#faq-form').addEventListener('submit',(e)=>{
+	e.preventDefault();
+});
+
+
