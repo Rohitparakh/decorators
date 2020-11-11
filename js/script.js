@@ -641,7 +641,7 @@ if($('#product-page').length){
 			document.querySelector('#product-page-submit').disabled=true;
 		},
 		rules: {
-			username: {
+			name: {
 				required: true
 			},
 			email: {
