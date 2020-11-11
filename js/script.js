@@ -604,7 +604,7 @@
 	//Contact Form Validation
 	if($('#contact-form').length){
 		$('#contact-form').validate({
-			onkeyup: false,
+			onkeyup: true,
 			submitHandler: function() {  
 				document.querySelector('#contact-form-success').style.transform="translateX(0%)";
 				document.querySelector('#contact-form-submit').innerHTML="Form Submitted";
@@ -631,10 +631,40 @@
 		});
 	}
 	
+//Product Page Validation
+if($('#product-page').length){
+	$('#product-page').validate({
+		onkeyup: true,
+		submitHandler: function() {  
+			document.querySelector('#product-page-success').style.transform="translateX(0%)";
+			document.querySelector('#product-page-submit').innerHTML="Form Submitted";
+			document.querySelector('#product-page-submit').disabled=true;
+		},
+		rules: {
+			username: {
+				required: true
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			phone: {
+				required: true
+			},
+			category: {
+				required: true
+			},
+			message: {
+				required: true
+			}
+		}
+	});
+}
+
 	//Index Contact Form Validation
 	if($('#contact-form-index').length){
 		$('#contact-form-index').validate({
-			onkeyup: false,
+			onkeyup: true,
 			submitHandler: function() {  
 				document.querySelector('#contact-form-index-success').style.transform="translateX(0%)";
 				document.querySelector('#contact-form-index-submit').innerHTML="Form Submitted";
@@ -663,7 +693,7 @@
 	//Send Us Message Form Validation
 	if($('#send-message').length){
 		$('#send-message').validate({
-			onkeyup: false,
+			onkeyup: true,
 submitHandler: function() {  
 	document.querySelector('#send-message-success').style.transform="translateX(0%)";
 	document.querySelector('#send-message-submit').innerHTML="Form Submitted";
@@ -690,7 +720,7 @@ submitHandler: function() {
 	//FAQ form validation	
 	if($('#faq-form').length){
 		$('#faq-form').validate({
-			onkeyup: false,
+			onkeyup: true,
 			submitHandler: function() {  
 				document.querySelector('#faq-form-success').style.transform="translateX(0%)";
 				document.querySelector('#faq-form-submit').innerHTML="Form Submitted";
@@ -933,6 +963,10 @@ document.querySelector('#contact-form-index').addEventListener('submit',(e)=>{
 });
 
 document.querySelector('#faq-form').addEventListener('submit',(e)=>{
+	e.preventDefault();
+});
+
+document.querySelector('#product-page').addEventListener('submit',(e)=>{
 	e.preventDefault();
 });
 
