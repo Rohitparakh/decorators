@@ -636,9 +636,9 @@ if($('#product-page').length){
 	$('#product-page').validate({
 		onkeyup: true,
 		submitHandler: function() {  
-			document.querySelector('#product-page-success').style.transform="translateX(0%)";
-			document.querySelector('#product-page-submit').innerHTML="Form Submitted";
-			document.querySelector('#product-page-submit').disabled=true;
+			document.querySelector('#contact-form-success').style.transform="translateX(0%)";
+				document.querySelector('#contact-form-submit').innerHTML="Form Submitted";
+				document.querySelector('#contact-form-submit').disabled=true;
 		},
 		rules: {
 			name: {
@@ -666,9 +666,9 @@ if($('#product-page').length){
 		$('#contact-form-index').validate({
 			onkeyup: true,
 			submitHandler: function() {  
-				document.querySelector('#contact-form-index-success').style.transform="translateX(0%)";
-				document.querySelector('#contact-form-index-submit').innerHTML="Form Submitted";
-				document.querySelector('#contact-form-index-submit').disabled=true;
+				document.querySelector('#contact-form-success').style.transform="translateX(0%)";
+				document.querySelector('#contact-form-submit').innerHTML="Form Submitted";
+				document.querySelector('#contact-form-submit').disabled=true;
 },
 			rules: {
 				username: {
@@ -722,9 +722,9 @@ submitHandler: function() {
 		$('#faq-form').validate({
 			onkeyup: true,
 			submitHandler: function() {  
-				document.querySelector('#faq-form-success').style.transform="translateX(0%)";
-				document.querySelector('#faq-form-submit').innerHTML="Form Submitted";
-				document.querySelector('#faq-form-submit').disabled=true;
+				document.querySelector('#contact-form-success').style.transform="translateX(0%)";
+				document.querySelector('#contact-form-submit').innerHTML="Form Submitted";
+				document.querySelector('#contact-form-submit').disabled=true;
 			},
 rules:{
 	username:{
