@@ -6527,6 +6527,9 @@ color:#777777;
 	margin-bottom:30px;
 	color:#9e9e9e;	
 }
+.contact-section .info-style-one >ul> a>li> div.text:hover{
+	color:var(--primary);
+}
 
 /*** 
 

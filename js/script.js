@@ -971,17 +971,5 @@ $("#contact-form").submit(function(e) {
 	//   alert("Thank you!");
 	});
   });
-// document.querySelector('#contact-form-index').addEventListener('submit',(e)=>{
-// 	e.preventDefault();
-
-// });
-
-// document.querySelector('#faq-form').addEventListener('submit',(e)=>{
-// 	e.preventDefault();
-// });
-
-// document.querySelector('#product-page').addEventListener('submit',(e)=>{
-// 	e.preventDefault();
-// });
 
 
