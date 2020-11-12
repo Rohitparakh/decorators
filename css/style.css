@@ -905,7 +905,7 @@ img{
 	padding-top:10px !important;	
 }
 
-.main-header li.dropdown> a::after{
+/* .main-header li.dropdown> a::after{
 	font-family: 'FontAwesome';
 	content: "\f107";
 	position:absolute;
@@ -927,7 +927,7 @@ img{
 .main-header li.dropdown> a:hover::after{
 	content: "";
 
-}
+} */
 
 /*** 
 

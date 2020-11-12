@@ -103,6 +103,8 @@
 		//Show Popup
 		$('.search-box-btn').on('click', function() {
 			searchPopup.addClass('popup-visible');
+			setTimeout(()=>{displayResults(products)},700);
+			// displayResults(products);
 		});
 		
 		//Hide Popup
@@ -819,24 +821,59 @@ email:true
  //Enter product info in this array for search results
    let products=[
 	   {name:"Product A",
-		desc:"Desc A",
-		 features:["Feature 1", "Feature 2"]  },
+		desc:"Description A",
+		 features:["Feature 1", "Feature 2"],
+		image:"1"
+	  },
 		 
 		 {name:"Product B",
-		desc:"Desc B",
-		 features:["Feature 3", "Feature 4"]},
+		desc:"Description B",
+		 features:["Feature 3", "Feature 4"],
+		 image:"2"
+		},
 
 		 {name:"Product C",
-		desc:"Desc C",
-		 features:["Feature 5", "Feature 6"]},
+		desc:"Description C",
+		 features:["Feature 5", "Feature 6"],
+		 image:"3"
+		},
 
 		 {name:"Product D",
-		desc:"Desc D",
-		 features:["Feature 7", "Feature 8"]},
+		desc:"Description D",
+		 features:["Feature 7", "Feature 8"],
+		 image:"4"
+		},
 
 		 {name:"Product E",
-		desc:"Desc E",
-		 features:["Feature 9", "Feature 10"]},
+		desc:"Description E",
+		 features:["Feature 9", "Feature 10"],
+		image:"5"
+
+		},
+
+		 {name:"Product F",
+		desc:"Description E",
+		 features:["Feature 11", "Feature 12"],
+		 image:"6"
+		},
+		 
+		 {name:"Product G",
+		desc:"Description E",
+		 features:["Feature 13", "Feature 14"],
+		 image:"7"
+		},
+		 
+		 {name:"Product H",
+		desc:"Description E",
+		 features:["Feature 15", "Feature 16"],
+		 image:"8"
+		},
+		 
+		 {name:"Product I",
+		desc:"Description E",
+		 features:["Feature 17", "Feature 18"],
+		 image:"9"
+		}
 		];
   const searchText=document.getElementById("search-text");
   const filteredProducts=[];
@@ -877,7 +914,7 @@ searchText.addEventListener('keyup',(e)=>{
 	return `<!--Service Type-->
 	<div class="service-type col-lg-3 col-md-3 col-sm-5 col-xs-12">
 		<div class="inner-box">
-			<figure class="image-box"><img src="images/resource/service-image-11.jpg" alt=""></figure>
+			<figure class="image-box"><img src="images/resource/service-image-${product.image}.jpg" alt=""></figure>
 			<div class="lower-content">
 				<h3>${product.name}</h3>
 				<div class="desc-text">${product.desc}</div>
