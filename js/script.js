@@ -949,14 +949,28 @@ suggestedLI.forEach(item => {
 });
 
 
-document.querySelector('#send-message').addEventListener('submit',(e)=>{
-	e.preventDefault();
-});
+// document.querySelector('#send-message').addEventListener('submit',(e)=>{
+// 	e.preventDefault();
+// });
 
-document.querySelector('#contact-form').addEventListener('submit',(e)=>{
+// document.querySelector('#contact-form').addEventListener('submit',(e)=>{
+// 	e.preventDefault();
+// });
+$("#contact-form").submit(function(e) {
 	e.preventDefault();
-});
-
+  
+	var $form = $(this);
+	$.post($form.attr("action"), $form.serialize()).then(function() {
+	//   alert("Thank you!");
+	});
+  });$("#send-message").submit(function(e) {
+	e.preventDefault();
+  
+	var $form = $(this);
+	$.post($form.attr("action"), $form.serialize()).then(function() {
+	//   alert("Thank you!");
+	});
+  });
 // document.querySelector('#contact-form-index').addEventListener('submit',(e)=>{
 // 	e.preventDefault();
 
