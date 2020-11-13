@@ -719,6 +719,31 @@ submitHandler: function() {
 		});
 	}
 
+	//Send Us Message Form Validation
+	if($('#newsletter-form').length){
+		$('#newsletter-form').validate({
+			onkeyup: true,
+submitHandler: function() {  
+	// document.querySelector('#send-message-success').style.transform="translateX(0%)";
+	// document.querySelector('#send-message-submit').innerHTML="Form Submitted";
+	// 			document.querySelector('#send-message-submit').disabled=true;
+	document.querySelector('#newsletter-row').innerHTML=`<h1 style="text-align:center" id="newsletter-form-success">Form Submitted Successfully!</h1>`;
+
+},
+
+			rules:{
+				name:{
+					required:true
+				},
+				email:{
+					required:true,
+                    email:true
+				}
+				
+			}
+		});
+	}
+
 	//FAQ form validation	
 	if($('#faq-form').length){
 		$('#faq-form').validate({
@@ -1000,7 +1025,9 @@ $("#contact-form").submit(function(e) {
 	$.post($form.attr("action"), $form.serialize()).then(function() {
 	//   alert("Thank you!");
 	});
-  });$("#send-message").submit(function(e) {
+  });
+  
+  $("#send-message").submit(function(e) {
 	e.preventDefault();
   
 	var $form = $(this);
@@ -1009,4 +1036,11 @@ $("#contact-form").submit(function(e) {
 	});
   });
 
-
+  $("#newsletter-form").submit(function(e) {
+	e.preventDefault();
+  
+	var $form = $(this);
+	$.post($form.attr("action"), $form.serialize()).then(function() {
+	//   alert("Thank you!");
+	});
+  });
