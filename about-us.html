@@ -574,7 +574,7 @@
     <!--Newsletter Style One-->
     <section class="newsletter-style-one">
     	<div class="auto-container">
-        	<div class="row clearfix">
+        	<div id="newsletter-row" class="row clearfix">
             	
                 <div class="title-column col-lg-4 col-md-12 col-sm-12">
                 	<h2>Newsletter Signup</h2>
@@ -583,14 +583,14 @@
                 <!--Form Column-->
                 <div class="form-column col-lg-8 col-md-12 col-sm-12">
                     <div class="inner-box">
-                        <form method="post" action="#">
-                        	<div class="row clearfix">
+                        <form method="post" action="#" id="newsletter-form" name="newsletter-form" data-netlify="true">
+                        	<div  class="row clearfix">
                             	<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                                 	<div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group">
                                             	<span class="floated-icon fa fa-user"></span>
-                                                <input type="text" name="email" value="" placeholder="Your Name" required>
+                                                <input type="text" name="name" value="" placeholder="Your Name" required>
                                             </div>
                                         </div>
                                         
@@ -604,7 +604,8 @@
                                 </div>
                                 
                                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                	<button type="submit" class="theme-btn">Subscribe</button>
+                                    <button type="submit" id="newsletter-form-submit" class="theme-btn">Subscribe</button>
+                                    
                                 </div>
                                 
                             </div>
